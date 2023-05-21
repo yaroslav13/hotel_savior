@@ -1,5 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.savior.hotel.hotel_savior">
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-</manifest>

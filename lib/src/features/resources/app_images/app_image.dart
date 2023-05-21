@@ -1,4 +1,0 @@
-enum AppImage {
-  logo,
-  fingerprint,
-}
