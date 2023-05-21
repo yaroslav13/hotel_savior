@@ -33,6 +33,8 @@ class AuthRepositoryImpl implements AuthRepository {
 
   late final StreamSubscription<String?> _authorizationIdSubscription;
   final _authorizationIdPublishSubject = PublishSubject<String?>();
+
+  @override
   Stream<String?> get authorizationIdStream =>
       _authorizationIdPublishSubject.stream;
 
@@ -90,6 +92,7 @@ class AuthRepositoryImpl implements AuthRepository {
     }
   }
 
+  @override
   @disposeMethod
   Future<void> dispose() async {
     await _authorizationIdSubscription.cancel();

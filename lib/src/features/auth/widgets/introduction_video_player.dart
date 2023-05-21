@@ -7,9 +7,9 @@ class _IntroductionVideoPlayer extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final videoPlayerController = useVideoPlayerController(_introductionVideo)
-      ..play()
-      ..setLooping(true);
+    final videoPlayerController = useVideoPlayerController(_introductionVideo);
+    unawaited(videoPlayerController.play());
+    unawaited(videoPlayerController.setLooping(true));
 
     final logoStyle = Theme.of(context).textTheme.headlineLarge;
 

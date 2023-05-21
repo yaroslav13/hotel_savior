@@ -102,7 +102,7 @@ class _LoaderDot extends StatelessWidget {
     required this.animation,
     this.color,
     this.opacitySubtract = 0,
-    this.additionalSize = const Size.square(0),
+    this.additionalSize = Size.zero,
     
   });
 

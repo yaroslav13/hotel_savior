@@ -26,6 +26,8 @@ class MembershipStatusRepositoryImpl implements MembershipStatusRepository {
   late final StreamSubscription<String?> _membershipStatusSubscription;
 
   final _membershipStatusPublishSubject = PublishSubject<MembershipStatus>();
+
+  @override
   Stream<MembershipStatus> get membershipStatusStream =>
       _membershipStatusPublishSubject.stream;
 
@@ -59,6 +61,7 @@ class MembershipStatusRepositoryImpl implements MembershipStatusRepository {
     );
   }
 
+  @override
   @disposeMethod
   Future<void> dispose() async {
     await _membershipStatusSubscription.cancel();
