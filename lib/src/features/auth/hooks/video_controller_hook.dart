@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:video_player/video_player.dart';
@@ -26,12 +28,13 @@ class _VideoPlayerHookState
   void initHook() {
     super.initHook();
 
-    _controller = VideoPlayerController.asset(hook.dataSource)..initialize();
+    _controller = VideoPlayerController.asset(hook.dataSource);
+    unawaited(_controller.initialize());
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    unawaited(_controller.dispose());
     super.dispose();
   }
 

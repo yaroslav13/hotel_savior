@@ -40,7 +40,7 @@ class AppThemeFactory {
   InputDecorationTheme _composeInputDecorationTheme(
     TextTheme textTheme,
   ) {
-    const _borderWidth = 2.0;
+    const borderWidth = 2.0;
 
     final borderRadius = const BorderRadius.all(
       Radius.circular(8),
@@ -49,7 +49,7 @@ class AppThemeFactory {
     return InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(width: _borderWidth),
+        borderSide: const BorderSide(width: borderWidth),
       ),
       fillColor: _colorsContainer.white,
       filled: true,

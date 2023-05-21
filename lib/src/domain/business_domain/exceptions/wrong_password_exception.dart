@@ -4,4 +4,3 @@ class WrongPasswordException implements Exception {
   @override
   String toString() => 'InvalidPasswordException';
 }
-

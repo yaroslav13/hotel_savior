@@ -33,7 +33,8 @@ class MembershipStatusObserverBloc
       ),
     );
   }
-
+  
+  ///TODO: Add a method to handle the [MembershipStatusObserverEvent.membershipStatusChanged] event
   Future<void> _onMembershipStatusChanged(
     MembershipStatus membershipStatus,
     Emitter<MembershipStatusObserverState> emit,

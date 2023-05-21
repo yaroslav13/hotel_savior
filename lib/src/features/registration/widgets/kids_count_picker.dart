@@ -8,7 +8,7 @@ class _KidsCountPicker extends StatelessWidget
   const _KidsCountPicker();
 
   String _mapKidsNumberToText(String number) =>
-      number == _maxChildrenCount.toString() ? '5+' : number.toString();
+      number == _maxChildrenCount.toString() ? '5+' : number;
 
   @override
   Widget build(BuildContext context) => observe(
