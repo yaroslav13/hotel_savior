@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.savior.hotel.hotel_savior">
+
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="hotel_savior"
         android:name="${applicationName}"
@@ -7,6 +9,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -22,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <meta-data
+           android:name="com.google.firebase.messaging.default_notification_channel_id"
+           android:value="welcome_app_notification_channel_id" />
 
         <meta-data
             android:name="flutterEmbedding"
