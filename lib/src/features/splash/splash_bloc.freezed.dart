@@ -166,6 +166,7 @@ abstract class _Started implements SplashEvent {
 /// @nodoc
 mixin _$SplashState {
   double get logoScaleFactor => throw _privateConstructorUsedError;
+  MembershipStatus? get membershipStatus => throw _privateConstructorUsedError;
   bool? get isUserAuthorized => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -179,7 +180,10 @@ abstract class $SplashStateCopyWith<$Res> {
           SplashState value, $Res Function(SplashState) then) =
       _$SplashStateCopyWithImpl<$Res, SplashState>;
   @useResult
-  $Res call({double logoScaleFactor, bool? isUserAuthorized});
+  $Res call(
+      {double logoScaleFactor,
+      MembershipStatus? membershipStatus,
+      bool? isUserAuthorized});
 }
 
 /// @nodoc
@@ -196,6 +200,7 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
   @override
   $Res call({
     Object? logoScaleFactor = null,
+    Object? membershipStatus = freezed,
     Object? isUserAuthorized = freezed,
   }) {
     return _then(_value.copyWith(
@@ -203,6 +208,10 @@ class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
           ? _value.logoScaleFactor
           : logoScaleFactor // ignore: cast_nullable_to_non_nullable
               as double,
+      membershipStatus: freezed == membershipStatus
+          ? _value.membershipStatus
+          : membershipStatus // ignore: cast_nullable_to_non_nullable
+              as MembershipStatus?,
       isUserAuthorized: freezed == isUserAuthorized
           ? _value.isUserAuthorized
           : isUserAuthorized // ignore: cast_nullable_to_non_nullable
@@ -219,7 +228,10 @@ abstract class _$$_SplashStateCopyWith<$Res>
       __$$_SplashStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double logoScaleFactor, bool? isUserAuthorized});
+  $Res call(
+      {double logoScaleFactor,
+      MembershipStatus? membershipStatus,
+      bool? isUserAuthorized});
 }
 
 /// @nodoc
@@ -234,6 +246,7 @@ class __$$_SplashStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? logoScaleFactor = null,
+    Object? membershipStatus = freezed,
     Object? isUserAuthorized = freezed,
   }) {
     return _then(_$_SplashState(
@@ -241,6 +254,10 @@ class __$$_SplashStateCopyWithImpl<$Res>
           ? _value.logoScaleFactor
           : logoScaleFactor // ignore: cast_nullable_to_non_nullable
               as double,
+      membershipStatus: freezed == membershipStatus
+          ? _value.membershipStatus
+          : membershipStatus // ignore: cast_nullable_to_non_nullable
+              as MembershipStatus?,
       isUserAuthorized: freezed == isUserAuthorized
           ? _value.isUserAuthorized
           : isUserAuthorized // ignore: cast_nullable_to_non_nullable
@@ -252,17 +269,20 @@ class __$$_SplashStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SplashState implements _SplashState {
-  const _$_SplashState({this.logoScaleFactor = 1, this.isUserAuthorized});
+  const _$_SplashState(
+      {this.logoScaleFactor = 1, this.membershipStatus, this.isUserAuthorized});
 
   @override
   @JsonKey()
   final double logoScaleFactor;
   @override
+  final MembershipStatus? membershipStatus;
+  @override
   final bool? isUserAuthorized;
 
   @override
   String toString() {
-    return 'SplashState(logoScaleFactor: $logoScaleFactor, isUserAuthorized: $isUserAuthorized)';
+    return 'SplashState(logoScaleFactor: $logoScaleFactor, membershipStatus: $membershipStatus, isUserAuthorized: $isUserAuthorized)';
   }
 
   @override
@@ -272,13 +292,15 @@ class _$_SplashState implements _SplashState {
             other is _$_SplashState &&
             (identical(other.logoScaleFactor, logoScaleFactor) ||
                 other.logoScaleFactor == logoScaleFactor) &&
+            (identical(other.membershipStatus, membershipStatus) ||
+                other.membershipStatus == membershipStatus) &&
             (identical(other.isUserAuthorized, isUserAuthorized) ||
                 other.isUserAuthorized == isUserAuthorized));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, logoScaleFactor, isUserAuthorized);
+  int get hashCode => Object.hash(
+      runtimeType, logoScaleFactor, membershipStatus, isUserAuthorized);
 
   @JsonKey(ignore: true)
   @override
@@ -290,10 +312,13 @@ class _$_SplashState implements _SplashState {
 abstract class _SplashState implements SplashState {
   const factory _SplashState(
       {final double logoScaleFactor,
+      final MembershipStatus? membershipStatus,
       final bool? isUserAuthorized}) = _$_SplashState;
 
   @override
   double get logoScaleFactor;
+  @override
+  MembershipStatus? get membershipStatus;
   @override
   bool? get isUserAuthorized;
   @override

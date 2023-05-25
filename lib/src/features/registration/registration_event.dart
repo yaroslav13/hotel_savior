@@ -14,6 +14,8 @@ class RegistrationEvent with _$RegistrationEvent {
   const factory RegistrationEvent.emailChanged(String email) = _EmailChanged;
   const factory RegistrationEvent.passwordApproved(String password) =
       _PasswordApproved;
+  const factory RegistrationEvent.passwordFailed() =
+      _PasswordFailed;
   const factory RegistrationEvent.fullNameChanged(String fullName) =
       _FullNameChanged;
   const factory RegistrationEvent.formSubmitted() = _FormSubmitted;

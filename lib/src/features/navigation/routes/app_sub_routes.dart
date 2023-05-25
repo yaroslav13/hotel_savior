@@ -3,7 +3,23 @@ import 'package:hotel_savior/src/features/navigation/routes/base/base_route.dart
 import 'package:hotel_savior/src/features/navigation/routes/base/base_sub_route.dart';
 
 enum AppSubRoutes implements BaseSubRoute {
-  registration(nameOrNull: 'registration', path: 'registration');
+  registration(nameOrNull: 'registration', path: 'registration'),
+  membershipBenefits(
+    nameOrNull: 'membership_benefits',
+    path: 'membership_benefits',
+  ),
+  servicesLocationVisualizer(
+    nameOrNull: 'services_location_visualizer',
+    path: 'services_location_visualizer',
+  ),
+  hotelServiceDetails(
+    nameOrNull: 'hotel_service_details',
+    path: 'hotel_service_details',
+  ),
+  membershipActivation(
+    nameOrNull: 'membership_activation',
+    path: 'membership_activation',
+  );
 
   const AppSubRoutes({
     required this.path,
@@ -26,10 +42,13 @@ enum AppSubRoutes implements BaseSubRoute {
 
   @override
   List<BaseRoute> get roots {
-    switch (this) {
-      case AppSubRoutes.registration:
-        return [AppRootRoutes.login];
-    }
+    return switch (this) {
+      AppSubRoutes.registration => [AppRootRoutes.login],
+      AppSubRoutes.membershipActivation => [AppRootRoutes.home],
+      AppSubRoutes.membershipBenefits => [AppRootRoutes.home],
+      AppSubRoutes.servicesLocationVisualizer => [AppRootRoutes.explore],
+      AppSubRoutes.hotelServiceDetails => [AppRootRoutes.home],
+    };
   }
 
   @override

@@ -34,6 +34,7 @@ class AppThemeFactory {
       inputDecorationTheme: _composeInputDecorationTheme(basicTextTheme),
       elevatedButtonTheme: _elevatedButtonThemeData,
       listTileTheme: _listTileThemeData,
+      bottomNavigationBarTheme: _bottomNavigationBarThemeData,
     );
   }
 
@@ -75,6 +76,14 @@ class AppThemeFactory {
         selectedTileColor: _colorsContainer.belgion,
         selectedColor: _colorsContainer.black,
         textColor: _colorsContainer.blueM3LightPrimary,
+      );
+
+  BottomNavigationBarThemeData get _bottomNavigationBarThemeData =>
+      BottomNavigationBarThemeData(
+        backgroundColor: _colorsContainer.white,
+        selectedItemColor: _colorsContainer.blueM3LightPrimary,
+        unselectedItemColor: _colorsContainer.belgion,
+        showSelectedLabels: false,
       );
 
   TextTheme _composeTextTheme(TextTheme basicTheme) => const TextTheme()

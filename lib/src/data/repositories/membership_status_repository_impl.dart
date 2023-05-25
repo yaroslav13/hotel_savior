@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hotel_savior/src/data/api/membership_status_api.dart';
 import 'package:hotel_savior/src/domain/business_domain/entities/membership_status/membership_status.dart';
 import 'package:hotel_savior/src/domain/business_domain/exceptions/unknown_exception.dart';
+import 'package:hotel_savior/src/domain/business_domain/exceptions/user_not_found_exception.dart';
 import 'package:hotel_savior/src/domain/repositories/auth_repository.dart';
 import 'package:hotel_savior/src/domain/repositories/membership_status_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -15,17 +16,17 @@ class MembershipStatusRepositoryImpl implements MembershipStatusRepository {
     this._authRepository,
     this._membershipStatusApi,
   ) {
-    _subscribeAuthorizationChanges();
+    _onInit();
   }
 
   final AuthRepository _authRepository;
 
   final MembershipStatusApi _membershipStatusApi;
 
-  late final StreamSubscription<String?> _authorizationIdSubscription;
-  late final StreamSubscription<String?> _membershipStatusSubscription;
-
   final _membershipStatusPublishSubject = PublishSubject<MembershipStatus>();
+
+  StreamSubscription<String?>? _authorizationIdSubscription;
+  StreamSubscription<String?>? _membershipStatusSubscription;
 
   @override
   Stream<MembershipStatus> get membershipStatusStream =>
@@ -64,23 +65,41 @@ class MembershipStatusRepositoryImpl implements MembershipStatusRepository {
   @override
   @disposeMethod
   Future<void> dispose() async {
-    await _membershipStatusSubscription.cancel();
+    await _membershipStatusSubscription?.cancel();
     await _membershipStatusPublishSubject.close();
-    await _authorizationIdSubscription.cancel();
+    await _authorizationIdSubscription?.cancel();
+  }
+
+  void _onInit() {
+    try {
+      final currentUserId = _authRepository.authorizedUserId;
+      _subscribeMembershipStatusChanges(currentUserId, skipEventCount: 1);
+    } on UserNotFoundException {
+      // ignore
+    } finally {
+      _subscribeAuthorizationChanges();
+    }
   }
 
   void _subscribeAuthorizationChanges() {
-    _authorizationIdSubscription =
+    _authorizationIdSubscription ??=
         _authRepository.authorizationIdStream.listen((authorizationId) {
-      if (authorizationId != null && !_membershipStatusSubscription.isPaused) {
+      final isMembershipStatusSubscriptionPaused =
+          _membershipStatusSubscription?.isPaused ?? false;    
+      if (authorizationId != null && !isMembershipStatusSubscriptionPaused) {
         _subscribeMembershipStatusChanges(authorizationId);
       }
     });
   }
 
-  void _subscribeMembershipStatusChanges(String currentUserId) {
-    _membershipStatusSubscription =
-        _membershipStatusApi.onMembershipStatusChanged(currentUserId).listen(
+  void _subscribeMembershipStatusChanges(
+    String currentUserId, {
+    int skipEventCount = 0,
+  }) {
+    _membershipStatusSubscription ??= _membershipStatusApi
+        .onMembershipStatusChanged(currentUserId)
+        .skip(skipEventCount)
+        .listen(
       (membershipStatusName) {
         final membershipStatus = MembershipStatus.values.firstWhere(
           (membershipStatus) => membershipStatus.name == membershipStatusName,

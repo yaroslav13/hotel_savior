@@ -7,6 +7,7 @@ class _PasswordTextField extends HookWidget
   @override
   Widget build(BuildContext context) {
     final controller = useTextEditingController();
+    final bloc = getBoundBloc(context);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 26).r,
@@ -22,7 +23,10 @@ class _PasswordTextField extends HookWidget
             numericCharCount: 1,
             specialCharCount: 1,
             minLength: AuthRules.minPasswordLength,
-            onSuccess: () => getBoundBloc(context).add(
+            onFail: () => bloc.add(
+              const RegistrationEvent.passwordFailed(),
+            ),
+            onSuccess: () => bloc.add(
               RegistrationEvent.passwordApproved(
                 controller.text,
               ),

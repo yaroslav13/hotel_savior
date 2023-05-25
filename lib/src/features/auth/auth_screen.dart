@@ -20,6 +20,7 @@ import 'package:hotel_savior/src/features/extensions/build_context_dependencies_
 import 'package:hotel_savior/src/features/extensions/build_context_navigation_x.dart';
 import 'package:hotel_savior/src/features/localization/locale_keys.g.dart';
 import 'package:hotel_savior/src/features/message_delegate/message_delegate.dart';
+import 'package:hotel_savior/src/features/navigation/routes/app_root_routes.dart';
 import 'package:hotel_savior/src/features/navigation/routes/app_sub_routes.dart';
 import 'package:hotel_savior/src/features/utils/font_height_utils.dart';
 import 'package:video_player/video_player.dart';
@@ -72,14 +73,14 @@ class _AuthView extends HookWidget
   void _listenEmailChanges(
     BuildContext context,
     TextEditingController emailTextEditingController, {
-    required String password,
+    required TextEditingController passwordTextEditingController,
   }) {
     final bloc = getBoundBloc(context);
     emailTextEditingController.addListener(
       () => bloc.add(
         AuthEvent.credentialsChanged(
           email: emailTextEditingController.text,
-          password: password,
+          password: passwordTextEditingController.text,
         ),
       ),
     );
@@ -88,13 +89,13 @@ class _AuthView extends HookWidget
   void _listenPasswordChanges(
     BuildContext context,
     TextEditingController passwordTextEditingController, {
-    required String email,
+    required TextEditingController emailTextEditingController,
   }) {
     final bloc = getBoundBloc(context);
     passwordTextEditingController.addListener(
       () => bloc.add(
         AuthEvent.credentialsChanged(
-          email: email,
+          email: emailTextEditingController.text,
           password: passwordTextEditingController.text,
         ),
       ),
@@ -112,12 +113,11 @@ class _AuthView extends HookWidget
         _listenEmailChanges(
           context,
           emailTextEditingController,
-          password: passwordTextEditingController.text,
+          passwordTextEditingController: passwordTextEditingController,
         );
 
         return null;
       },
-      [emailTextEditingController],
     );
 
     useEffect(
@@ -125,55 +125,63 @@ class _AuthView extends HookWidget
         _listenPasswordChanges(
           context,
           passwordTextEditingController,
-          email: emailTextEditingController.text,
+          emailTextEditingController: emailTextEditingController,
         );
 
         return null;
       },
-      [passwordTextEditingController],
     );
 
     return Scaffold(
       body: listen(
-        listenWhen: (_, current) => current.errorReason != null,
-        listener: (context, state) => _onAuthFailed(
-          context,
-          // ignore: avoid-non-null-assertion
-          state.errorReason!,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const _IntroductionVideoPlayer(),
-            25.verticalSpace,
-            const _WelcomeText(),
-            25.verticalSpace,
-            _AuthForm(
-              formKey: formKey,
-              emailTextEditingController: emailTextEditingController,
-              passwordTextEditingController: passwordTextEditingController,
-            ),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16).r,
-              child: TextButton(
-                onPressed: () => context.navigate(
-                  AppSubRoutes.registration,
-                ),
-                child: Text(LocaleKeys.notHaveAnAccount.tr()),
-              ),
-            ),
-            10.verticalSpace,
-            _LogInButton(
-              onLoginPressed: () => _onLogInButtonPressed(
-                context: context,
+        listenWhen: (previous, current) =>
+            previous.isAuthSuccess != current.isAuthSuccess,
+        listener: (context, state) {
+          if (state.isAuthSuccess) {
+            context.navigate(AppRootRoutes.home);
+          }
+        },
+        child: listen(
+          listenWhen: (_, current) => current.errorReason != null,
+          listener: (context, state) => _onAuthFailed(
+            context,
+            // ignore: avoid-non-null-assertion
+            state.errorReason!,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const _IntroductionVideoPlayer(),
+              25.verticalSpace,
+              const _WelcomeText(),
+              25.verticalSpace,
+              _AuthForm(
                 formKey: formKey,
                 emailTextEditingController: emailTextEditingController,
                 passwordTextEditingController: passwordTextEditingController,
               ),
-            ),
-            25.verticalSpace,
-          ],
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16).r,
+                child: TextButton(
+                  onPressed: () => context.navigate(
+                    AppSubRoutes.registration,
+                  ),
+                  child: Text(LocaleKeys.notHaveAnAccount.tr()),
+                ),
+              ),
+              10.verticalSpace,
+              _LogInButton(
+                onLoginPressed: () => _onLogInButtonPressed(
+                  context: context,
+                  formKey: formKey,
+                  emailTextEditingController: emailTextEditingController,
+                  passwordTextEditingController: passwordTextEditingController,
+                ),
+              ),
+              25.verticalSpace,
+            ],
+          ),
         ),
       ),
     );

@@ -47,7 +47,7 @@ android {
 
     defaultConfig {
         applicationId "com.savior.hotel.hotel_savior"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

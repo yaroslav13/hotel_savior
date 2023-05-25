@@ -29,6 +29,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     on<_GenderPicked>(_onGenderPicked);
     on<_KidsCountPicked>(_onKidsCountPicked);
     on<_PasswordApproved>(_onPasswordApproved);
+    on<_PasswordFailed>(_onPasswordFailed);
     on<_RelationshipStatusPicked>(_onRelationshipStatusPicked);
     on<_FullNameChanged>(_onFullNameChanged);
     on<_FormSubmitted>(_onFormSubmitted);
@@ -49,10 +50,17 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     _EmailChanged event,
     Emitter<RegistrationState> emit,
   ) {
+    final email = event.email.trim();
+    final fullName = state.fullName?.trim();
+    final password = state.password?.trim();
     emit(
       state.copyWith(
         email: event.email.trim(),
-        isFormFilled: state.fullName != null && state.password != null,
+        isFormFilled: email.isNotEmpty &&
+            fullName != null &&
+            password != null &&
+            fullName.isNotEmpty &&
+            password.isNotEmpty,
       ),
     );
   }
@@ -75,10 +83,29 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     _PasswordApproved event,
     Emitter<RegistrationState> emit,
   ) {
+    final password = event.password.trim();
+    final email = state.email?.trim();
+    final fullName = state.fullName?.trim();
     emit(
       state.copyWith(
         password: event.password,
-        isFormFilled: state.email != null && state.fullName != null,
+        isFormFilled: email != null &&
+            email.isNotEmpty &&
+            fullName != null &&
+            fullName.isNotEmpty &&
+            password.isNotEmpty,
+      ),
+    );
+  }
+
+  void _onPasswordFailed(
+    _PasswordFailed event,
+    Emitter<RegistrationState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        password: null,
+        isFormFilled: false,
       ),
     );
   }
@@ -94,10 +121,17 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     _FullNameChanged event,
     Emitter<RegistrationState> emit,
   ) {
+    final fullName = event.fullName.trim();
+    final email = state.email?.trim();
+    final password = state.password?.trim();
     emit(
       state.copyWith(
         fullName: event.fullName.trim(),
-        isFormFilled: state.email != null && state.password != null,
+        isFormFilled: fullName.isNotEmpty &&
+            email != null &&
+            password != null &&
+            email.isNotEmpty &&
+            password.isNotEmpty,
       ),
     );
   }

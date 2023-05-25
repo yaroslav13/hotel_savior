@@ -29,7 +29,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(
       state.copyWith(
         errorReason: null,
-        isCredentialsEmpty: event.email.isEmpty && event.password.isEmpty,
+        isCredentialsEmpty:
+            event.email.isEmpty || event.password.isEmpty,
       ),
     );
   }
