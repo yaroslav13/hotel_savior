@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
 
 const _membershipStatusCollectionName = 'membership_status';
-const _membershipStatusFieldName = 'membership_status';
+const _membershipStatusFieldName = 'membershipStatus';
 
 @injectable
 class MembershipStatusApi {

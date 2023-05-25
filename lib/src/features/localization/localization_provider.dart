@@ -18,6 +18,7 @@ class LocalizationProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FutureBuilder<void>(
+        // ignore: discarded_futures
         future: EasyLocalization.ensureInitialized(),
         builder: (_, snapshot) =>
             snapshot.connectionState == ConnectionState.done

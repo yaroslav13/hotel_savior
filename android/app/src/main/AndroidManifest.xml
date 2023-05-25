@@ -27,6 +27,9 @@
             </intent-filter>
         </activity>
 
+        <meta-data android:name="com.google.android.geo.API_KEY"
+                   android:value="AIzaSyD4rKPPME0cQd0h71yBdAs_I3xCsPmB1C8"/>
+
         <meta-data
            android:name="com.google.firebase.messaging.default_notification_channel_id"
            android:value="welcome_app_notification_channel_id" />

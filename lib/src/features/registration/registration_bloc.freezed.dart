@@ -25,6 +25,7 @@ mixin _$RegistrationEvent {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) =>
@@ -38,6 +39,7 @@ mixin _$RegistrationEvent {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) =>
@@ -51,6 +53,7 @@ mixin _$RegistrationEvent {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -65,6 +68,7 @@ mixin _$RegistrationEvent {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) =>
@@ -78,6 +82,7 @@ mixin _$RegistrationEvent {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) =>
@@ -90,6 +95,7 @@ mixin _$RegistrationEvent {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -186,6 +192,7 @@ class _$_GenderPicked implements _GenderPicked {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -202,6 +209,7 @@ class _$_GenderPicked implements _GenderPicked {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -218,6 +226,7 @@ class _$_GenderPicked implements _GenderPicked {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -238,6 +247,7 @@ class _$_GenderPicked implements _GenderPicked {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -254,6 +264,7 @@ class _$_GenderPicked implements _GenderPicked {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -269,6 +280,7 @@ class _$_GenderPicked implements _GenderPicked {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -362,6 +374,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -378,6 +391,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -394,6 +408,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -414,6 +429,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -430,6 +446,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -445,6 +462,7 @@ class _$_BirthdayDateChanged implements _BirthdayDateChanged {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -540,6 +558,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -556,6 +575,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -572,6 +592,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -592,6 +613,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -608,6 +630,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -623,6 +646,7 @@ class _$_RelationshipStatusPicked implements _RelationshipStatusPicked {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -717,6 +741,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -733,6 +758,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -749,6 +775,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -769,6 +796,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -785,6 +813,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -800,6 +829,7 @@ class _$_KidsCountPicked implements _KidsCountPicked {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -891,6 +921,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -907,6 +938,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -923,6 +955,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -943,6 +976,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -959,6 +993,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -974,6 +1009,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -1066,6 +1102,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -1082,6 +1119,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -1098,6 +1136,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -1118,6 +1157,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -1134,6 +1174,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -1149,6 +1190,7 @@ class _$_PasswordApproved implements _PasswordApproved {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -1167,6 +1209,155 @@ abstract class _PasswordApproved implements RegistrationEvent {
   @JsonKey(ignore: true)
   _$$_PasswordApprovedCopyWith<_$_PasswordApproved> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PasswordFailedCopyWith<$Res> {
+  factory _$$_PasswordFailedCopyWith(
+          _$_PasswordFailed value, $Res Function(_$_PasswordFailed) then) =
+      __$$_PasswordFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_PasswordFailedCopyWithImpl<$Res>
+    extends _$RegistrationEventCopyWithImpl<$Res, _$_PasswordFailed>
+    implements _$$_PasswordFailedCopyWith<$Res> {
+  __$$_PasswordFailedCopyWithImpl(
+      _$_PasswordFailed _value, $Res Function(_$_PasswordFailed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_PasswordFailed implements _PasswordFailed {
+  const _$_PasswordFailed();
+
+  @override
+  String toString() {
+    return 'RegistrationEvent.passwordFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_PasswordFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Gender gender) genderPicked,
+    required TResult Function(String birthdayDate) birthdayDateChanged,
+    required TResult Function(RelationshipStatus? relationshipStatus)
+        relationshipStatusPicked,
+    required TResult Function(int kidsCount) kidsCountPicked,
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
+    required TResult Function(String fullName) fullNameChanged,
+    required TResult Function() formSubmitted,
+  }) {
+    return passwordFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Gender gender)? genderPicked,
+    TResult? Function(String birthdayDate)? birthdayDateChanged,
+    TResult? Function(RelationshipStatus? relationshipStatus)?
+        relationshipStatusPicked,
+    TResult? Function(int kidsCount)? kidsCountPicked,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
+    TResult? Function(String fullName)? fullNameChanged,
+    TResult? Function()? formSubmitted,
+  }) {
+    return passwordFailed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Gender gender)? genderPicked,
+    TResult Function(String birthdayDate)? birthdayDateChanged,
+    TResult Function(RelationshipStatus? relationshipStatus)?
+        relationshipStatusPicked,
+    TResult Function(int kidsCount)? kidsCountPicked,
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
+    TResult Function(String fullName)? fullNameChanged,
+    TResult Function()? formSubmitted,
+    required TResult orElse(),
+  }) {
+    if (passwordFailed != null) {
+      return passwordFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GenderPicked value) genderPicked,
+    required TResult Function(_BirthdayDateChanged value) birthdayDateChanged,
+    required TResult Function(_RelationshipStatusPicked value)
+        relationshipStatusPicked,
+    required TResult Function(_KidsCountPicked value) kidsCountPicked,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
+    required TResult Function(_FullNameChanged value) fullNameChanged,
+    required TResult Function(_FormSubmitted value) formSubmitted,
+  }) {
+    return passwordFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GenderPicked value)? genderPicked,
+    TResult? Function(_BirthdayDateChanged value)? birthdayDateChanged,
+    TResult? Function(_RelationshipStatusPicked value)?
+        relationshipStatusPicked,
+    TResult? Function(_KidsCountPicked value)? kidsCountPicked,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
+    TResult? Function(_FullNameChanged value)? fullNameChanged,
+    TResult? Function(_FormSubmitted value)? formSubmitted,
+  }) {
+    return passwordFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GenderPicked value)? genderPicked,
+    TResult Function(_BirthdayDateChanged value)? birthdayDateChanged,
+    TResult Function(_RelationshipStatusPicked value)? relationshipStatusPicked,
+    TResult Function(_KidsCountPicked value)? kidsCountPicked,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
+    TResult Function(_FullNameChanged value)? fullNameChanged,
+    TResult Function(_FormSubmitted value)? formSubmitted,
+    required TResult orElse(),
+  }) {
+    if (passwordFailed != null) {
+      return passwordFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PasswordFailed implements RegistrationEvent {
+  const factory _PasswordFailed() = _$_PasswordFailed;
 }
 
 /// @nodoc
@@ -1241,6 +1432,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -1257,6 +1449,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -1273,6 +1466,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -1293,6 +1487,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -1309,6 +1504,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -1324,6 +1520,7 @@ class _$_FullNameChanged implements _FullNameChanged {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),
@@ -1389,6 +1586,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     required TResult Function(int kidsCount) kidsCountPicked,
     required TResult Function(String email) emailChanged,
     required TResult Function(String password) passwordApproved,
+    required TResult Function() passwordFailed,
     required TResult Function(String fullName) fullNameChanged,
     required TResult Function() formSubmitted,
   }) {
@@ -1405,6 +1603,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     TResult? Function(int kidsCount)? kidsCountPicked,
     TResult? Function(String email)? emailChanged,
     TResult? Function(String password)? passwordApproved,
+    TResult? Function()? passwordFailed,
     TResult? Function(String fullName)? fullNameChanged,
     TResult? Function()? formSubmitted,
   }) {
@@ -1421,6 +1620,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     TResult Function(int kidsCount)? kidsCountPicked,
     TResult Function(String email)? emailChanged,
     TResult Function(String password)? passwordApproved,
+    TResult Function()? passwordFailed,
     TResult Function(String fullName)? fullNameChanged,
     TResult Function()? formSubmitted,
     required TResult orElse(),
@@ -1441,6 +1641,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     required TResult Function(_KidsCountPicked value) kidsCountPicked,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordApproved value) passwordApproved,
+    required TResult Function(_PasswordFailed value) passwordFailed,
     required TResult Function(_FullNameChanged value) fullNameChanged,
     required TResult Function(_FormSubmitted value) formSubmitted,
   }) {
@@ -1457,6 +1658,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     TResult? Function(_KidsCountPicked value)? kidsCountPicked,
     TResult? Function(_EmailChanged value)? emailChanged,
     TResult? Function(_PasswordApproved value)? passwordApproved,
+    TResult? Function(_PasswordFailed value)? passwordFailed,
     TResult? Function(_FullNameChanged value)? fullNameChanged,
     TResult? Function(_FormSubmitted value)? formSubmitted,
   }) {
@@ -1472,6 +1674,7 @@ class _$_FormSubmitted implements _FormSubmitted {
     TResult Function(_KidsCountPicked value)? kidsCountPicked,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordApproved value)? passwordApproved,
+    TResult Function(_PasswordFailed value)? passwordFailed,
     TResult Function(_FullNameChanged value)? fullNameChanged,
     TResult Function(_FormSubmitted value)? formSubmitted,
     required TResult orElse(),

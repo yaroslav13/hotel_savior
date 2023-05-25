@@ -20,7 +20,7 @@ class UserDetails with _$UserDetails {
 
   const factory UserDetails.withCredentials({
     required String fullName,
-     required UserCredentials userCredentials,
+    required UserCredentials userCredentials,
     required Gender gender,
     required DateTime birthdayDate,
     required int kidsCount,

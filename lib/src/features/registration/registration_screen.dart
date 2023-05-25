@@ -16,7 +16,7 @@ import 'package:hotel_savior/src/features/extensions/build_context_dependencies_
 import 'package:hotel_savior/src/features/extensions/build_context_navigation_x.dart';
 import 'package:hotel_savior/src/features/localization/locale_keys.g.dart';
 import 'package:hotel_savior/src/features/message_delegate/message_delegate.dart';
-import 'package:hotel_savior/src/features/navigation/routes/app_root_routes.dart';
+import 'package:hotel_savior/src/features/navigation/routes/app_sub_routes.dart';
 import 'package:hotel_savior/src/features/registration/registration_bloc.dart';
 import 'package:hotel_savior/src/features/utils/date_formatter_utils.dart';
 import 'package:hotel_savior/src/features/utils/font_height_utils.dart';
@@ -77,7 +77,6 @@ class _RegistrationView extends HookWidget
           emailTextEditingController.removeListener(() => listener);
         };
       },
-      [emailTextEditingController],
     );
 
     return _ErrorObserver(
@@ -196,7 +195,7 @@ class _FormSubmissionObserver extends StatelessWidget
             previous.isFormSubmissionSuccess != current.isFormSubmissionSuccess,
         listener: (context, state) {
           if (state.isFormSubmissionSuccess) {
-            context.navigate(AppRootRoutes.home);
+            context.navigate(AppSubRoutes.membershipActivation);
           }
         },
         child: child,
